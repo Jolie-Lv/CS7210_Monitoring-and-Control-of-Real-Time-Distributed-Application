@@ -1,0 +1,7 @@
+syntax = "proto3";
+message JammerMessage{
+	double cpuUtil = 1;
+	double gpuUtil = 2;
+	double cpuMemUtil = 3;
+	double gpuMemUtil = 4;
+}
