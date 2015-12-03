@@ -5,7 +5,7 @@ PROTOBUF = ../global/message.pb.cc
 LIB = -lprotobuf
 LIB_PATH = $(LIB)
 all :
-	$(CXX) $(IDIR) $(PROTOBUF) DRFM.cpp -o DRFM $(LIB_PATH) 
+	$(CXX) $(IDIR) $(PROTOBUF) DRFM.cpp -o DRFM $(LIB_PATH) -g
 clean :
 	rm -f DRFM.h.gch. *.o DRFM ~/CS7210/log/DRFM*
 

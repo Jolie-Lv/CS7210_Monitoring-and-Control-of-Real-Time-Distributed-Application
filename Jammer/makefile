@@ -6,7 +6,7 @@ PROTOBUF = ../global/message.pb.cc
 LIB = -lprotobuf -lnvidia-ml
 
 all :
-	$(CXX)  $(IDIR) $(PROTOBUF) Jammer.cpp -o Jammer $(LIB_PATH)
+	$(CXX)  $(IDIR) $(PROTOBUF) Jammer.cu -o Jammer $(LIB_PATH)
 clean :
 	rm -f Jammer.h.gch. *.o Jammer ~/CS7210/log/Jammer*
 

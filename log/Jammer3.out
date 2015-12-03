@@ -1,0 +1,12 @@
+Connected to DRFM
+File time 1449170505258312, current time 1449170505544456
+Time different :286144
+Waiting on DRFM Message every second...
+Using Device 0: Tesla K20m
+	Device 0, "Tesla K20m":
+		Utilization: 9% GPU, 0% MEM
+		Power usage: 48W
+		CPU : 1.80643
+		Memory :98.405
+Waiting on DRFM Message every second...
+Caught terminating signal, exiting...

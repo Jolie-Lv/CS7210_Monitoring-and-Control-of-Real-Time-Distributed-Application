@@ -26,6 +26,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -34,36 +35,61 @@ void protobuf_AddDesc_message_2eproto();
 void protobuf_AssignDesc_message_2eproto();
 void protobuf_ShutdownFile_message_2eproto();
 
-class JammerMessage;
+class ProtoMessage;
+class ProtoMessage_JammerMessage;
+class ProtoMessage_SensorMessage;
 
+enum ProtoMessage_Signal {
+  ProtoMessage_Signal_DEFAULT = 0,
+  ProtoMessage_Signal_TERMINATE = 1,
+  ProtoMessage_Signal_START = 2,
+  ProtoMessage_Signal_RESET = 3,
+  ProtoMessage_Signal_ProtoMessage_Signal_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  ProtoMessage_Signal_ProtoMessage_Signal_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool ProtoMessage_Signal_IsValid(int value);
+const ProtoMessage_Signal ProtoMessage_Signal_Signal_MIN = ProtoMessage_Signal_DEFAULT;
+const ProtoMessage_Signal ProtoMessage_Signal_Signal_MAX = ProtoMessage_Signal_RESET;
+const int ProtoMessage_Signal_Signal_ARRAYSIZE = ProtoMessage_Signal_Signal_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* ProtoMessage_Signal_descriptor();
+inline const ::std::string& ProtoMessage_Signal_Name(ProtoMessage_Signal value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    ProtoMessage_Signal_descriptor(), value);
+}
+inline bool ProtoMessage_Signal_Parse(
+    const ::std::string& name, ProtoMessage_Signal* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProtoMessage_Signal>(
+    ProtoMessage_Signal_descriptor(), name, value);
+}
 // ===================================================================
 
-class JammerMessage : public ::google::protobuf::Message {
+class ProtoMessage_JammerMessage : public ::google::protobuf::Message {
  public:
-  JammerMessage();
-  virtual ~JammerMessage();
+  ProtoMessage_JammerMessage();
+  virtual ~ProtoMessage_JammerMessage();
 
-  JammerMessage(const JammerMessage& from);
+  ProtoMessage_JammerMessage(const ProtoMessage_JammerMessage& from);
 
-  inline JammerMessage& operator=(const JammerMessage& from) {
+  inline ProtoMessage_JammerMessage& operator=(const ProtoMessage_JammerMessage& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const JammerMessage& default_instance();
+  static const ProtoMessage_JammerMessage& default_instance();
 
-  void Swap(JammerMessage* other);
+  void Swap(ProtoMessage_JammerMessage* other);
 
   // implements Message ----------------------------------------------
 
-  inline JammerMessage* New() const { return New(NULL); }
+  inline ProtoMessage_JammerMessage* New() const { return New(NULL); }
 
-  JammerMessage* New(::google::protobuf::Arena* arena) const;
+  ProtoMessage_JammerMessage* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const JammerMessage& from);
-  void MergeFrom(const JammerMessage& from);
+  void CopyFrom(const ProtoMessage_JammerMessage& from);
+  void MergeFrom(const ProtoMessage_JammerMessage& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -78,7 +104,7 @@ class JammerMessage : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(JammerMessage* other);
+  void InternalSwap(ProtoMessage_JammerMessage* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -118,7 +144,25 @@ class JammerMessage : public ::google::protobuf::Message {
   double gpumemutil() const;
   void set_gpumemutil(double value);
 
-  // @@protoc_insertion_point(class_scope:JammerMessage)
+  // optional int64 performacnce = 5;
+  void clear_performacnce();
+  static const int kPerformacnceFieldNumber = 5;
+  ::google::protobuf::int64 performacnce() const;
+  void set_performacnce(::google::protobuf::int64 value);
+
+  // optional int32 workLoad = 6;
+  void clear_workload();
+  static const int kWorkLoadFieldNumber = 6;
+  ::google::protobuf::int32 workload() const;
+  void set_workload(::google::protobuf::int32 value);
+
+  // optional int32 app = 7;
+  void clear_app();
+  static const int kAppFieldNumber = 7;
+  ::google::protobuf::int32 app() const;
+  void set_app(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:ProtoMessage.JammerMessage)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -127,13 +171,247 @@ class JammerMessage : public ::google::protobuf::Message {
   double gpuutil_;
   double cpumemutil_;
   double gpumemutil_;
+  ::google::protobuf::int64 performacnce_;
+  ::google::protobuf::int32 workload_;
+  ::google::protobuf::int32 app_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_message_2eproto();
   friend void protobuf_AssignDesc_message_2eproto();
   friend void protobuf_ShutdownFile_message_2eproto();
 
   void InitAsDefaultInstance();
-  static JammerMessage* default_instance_;
+  static ProtoMessage_JammerMessage* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ProtoMessage_SensorMessage : public ::google::protobuf::Message {
+ public:
+  ProtoMessage_SensorMessage();
+  virtual ~ProtoMessage_SensorMessage();
+
+  ProtoMessage_SensorMessage(const ProtoMessage_SensorMessage& from);
+
+  inline ProtoMessage_SensorMessage& operator=(const ProtoMessage_SensorMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ProtoMessage_SensorMessage& default_instance();
+
+  void Swap(ProtoMessage_SensorMessage* other);
+
+  // implements Message ----------------------------------------------
+
+  inline ProtoMessage_SensorMessage* New() const { return New(NULL); }
+
+  ProtoMessage_SensorMessage* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ProtoMessage_SensorMessage& from);
+  void MergeFrom(const ProtoMessage_SensorMessage& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ProtoMessage_SensorMessage* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 workLoad = 1;
+  void clear_workload();
+  static const int kWorkLoadFieldNumber = 1;
+  ::google::protobuf::int32 workload() const;
+  void set_workload(::google::protobuf::int32 value);
+
+  // optional int32 flag = 2;
+  void clear_flag();
+  static const int kFlagFieldNumber = 2;
+  ::google::protobuf::int32 flag() const;
+  void set_flag(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:ProtoMessage.SensorMessage)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool _is_default_instance_;
+  ::google::protobuf::int32 workload_;
+  ::google::protobuf::int32 flag_;
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ProtoMessage_SensorMessage* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ProtoMessage : public ::google::protobuf::Message {
+ public:
+  ProtoMessage();
+  virtual ~ProtoMessage();
+
+  ProtoMessage(const ProtoMessage& from);
+
+  inline ProtoMessage& operator=(const ProtoMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ProtoMessage& default_instance();
+
+  void Swap(ProtoMessage* other);
+
+  // implements Message ----------------------------------------------
+
+  inline ProtoMessage* New() const { return New(NULL); }
+
+  ProtoMessage* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ProtoMessage& from);
+  void MergeFrom(const ProtoMessage& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ProtoMessage* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef ProtoMessage_JammerMessage JammerMessage;
+  typedef ProtoMessage_SensorMessage SensorMessage;
+
+  typedef ProtoMessage_Signal Signal;
+  static const Signal DEFAULT = ProtoMessage_Signal_DEFAULT;
+  static const Signal TERMINATE = ProtoMessage_Signal_TERMINATE;
+  static const Signal START = ProtoMessage_Signal_START;
+  static const Signal RESET = ProtoMessage_Signal_RESET;
+  static inline bool Signal_IsValid(int value) {
+    return ProtoMessage_Signal_IsValid(value);
+  }
+  static const Signal Signal_MIN =
+    ProtoMessage_Signal_Signal_MIN;
+  static const Signal Signal_MAX =
+    ProtoMessage_Signal_Signal_MAX;
+  static const int Signal_ARRAYSIZE =
+    ProtoMessage_Signal_Signal_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Signal_descriptor() {
+    return ProtoMessage_Signal_descriptor();
+  }
+  static inline const ::std::string& Signal_Name(Signal value) {
+    return ProtoMessage_Signal_Name(value);
+  }
+  static inline bool Signal_Parse(const ::std::string& name,
+      Signal* value) {
+    return ProtoMessage_Signal_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // optional string dest_device = 1;
+  void clear_dest_device();
+  static const int kDestDeviceFieldNumber = 1;
+  const ::std::string& dest_device() const;
+  void set_dest_device(const ::std::string& value);
+  void set_dest_device(const char* value);
+  void set_dest_device(const char* value, size_t size);
+  ::std::string* mutable_dest_device();
+  ::std::string* release_dest_device();
+  void set_allocated_dest_device(::std::string* dest_device);
+
+  // optional .ProtoMessage.JammerMessage jammer = 2;
+  bool has_jammer() const;
+  void clear_jammer();
+  static const int kJammerFieldNumber = 2;
+  const ::ProtoMessage_JammerMessage& jammer() const;
+  ::ProtoMessage_JammerMessage* mutable_jammer();
+  ::ProtoMessage_JammerMessage* release_jammer();
+  void set_allocated_jammer(::ProtoMessage_JammerMessage* jammer);
+
+  // optional .ProtoMessage.SensorMessage sensor = 3;
+  bool has_sensor() const;
+  void clear_sensor();
+  static const int kSensorFieldNumber = 3;
+  const ::ProtoMessage_SensorMessage& sensor() const;
+  ::ProtoMessage_SensorMessage* mutable_sensor();
+  ::ProtoMessage_SensorMessage* release_sensor();
+  void set_allocated_sensor(::ProtoMessage_SensorMessage* sensor);
+
+  // optional int64 time = 4;
+  void clear_time();
+  static const int kTimeFieldNumber = 4;
+  ::google::protobuf::int64 time() const;
+  void set_time(::google::protobuf::int64 value);
+
+  // optional .ProtoMessage.Signal signal = 5;
+  void clear_signal();
+  static const int kSignalFieldNumber = 5;
+  ::ProtoMessage_Signal signal() const;
+  void set_signal(::ProtoMessage_Signal value);
+
+  // @@protoc_insertion_point(class_scope:ProtoMessage)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool _is_default_instance_;
+  ::google::protobuf::internal::ArenaStringPtr dest_device_;
+  ::ProtoMessage_JammerMessage* jammer_;
+  ::ProtoMessage_SensorMessage* sensor_;
+  ::google::protobuf::int64 time_;
+  int signal_;
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ProtoMessage* default_instance_;
 };
 // ===================================================================
 
@@ -141,67 +419,308 @@ class JammerMessage : public ::google::protobuf::Message {
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
-// JammerMessage
+// ProtoMessage_JammerMessage
 
 // optional double cpuUtil = 1;
-inline void JammerMessage::clear_cpuutil() {
+inline void ProtoMessage_JammerMessage::clear_cpuutil() {
   cpuutil_ = 0;
 }
-inline double JammerMessage::cpuutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.cpuUtil)
+inline double ProtoMessage_JammerMessage::cpuutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.cpuUtil)
   return cpuutil_;
 }
-inline void JammerMessage::set_cpuutil(double value) {
+inline void ProtoMessage_JammerMessage::set_cpuutil(double value) {
   
   cpuutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.cpuUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.cpuUtil)
 }
 
 // optional double gpuUtil = 2;
-inline void JammerMessage::clear_gpuutil() {
+inline void ProtoMessage_JammerMessage::clear_gpuutil() {
   gpuutil_ = 0;
 }
-inline double JammerMessage::gpuutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.gpuUtil)
+inline double ProtoMessage_JammerMessage::gpuutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.gpuUtil)
   return gpuutil_;
 }
-inline void JammerMessage::set_gpuutil(double value) {
+inline void ProtoMessage_JammerMessage::set_gpuutil(double value) {
   
   gpuutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.gpuUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.gpuUtil)
 }
 
 // optional double cpuMemUtil = 3;
-inline void JammerMessage::clear_cpumemutil() {
+inline void ProtoMessage_JammerMessage::clear_cpumemutil() {
   cpumemutil_ = 0;
 }
-inline double JammerMessage::cpumemutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.cpuMemUtil)
+inline double ProtoMessage_JammerMessage::cpumemutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.cpuMemUtil)
   return cpumemutil_;
 }
-inline void JammerMessage::set_cpumemutil(double value) {
+inline void ProtoMessage_JammerMessage::set_cpumemutil(double value) {
   
   cpumemutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.cpuMemUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.cpuMemUtil)
 }
 
 // optional double gpuMemUtil = 4;
-inline void JammerMessage::clear_gpumemutil() {
+inline void ProtoMessage_JammerMessage::clear_gpumemutil() {
   gpumemutil_ = 0;
 }
-inline double JammerMessage::gpumemutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.gpuMemUtil)
+inline double ProtoMessage_JammerMessage::gpumemutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.gpuMemUtil)
   return gpumemutil_;
 }
-inline void JammerMessage::set_gpumemutil(double value) {
+inline void ProtoMessage_JammerMessage::set_gpumemutil(double value) {
   
   gpumemutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.gpuMemUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.gpuMemUtil)
+}
+
+// optional int64 performacnce = 5;
+inline void ProtoMessage_JammerMessage::clear_performacnce() {
+  performacnce_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ProtoMessage_JammerMessage::performacnce() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.performacnce)
+  return performacnce_;
+}
+inline void ProtoMessage_JammerMessage::set_performacnce(::google::protobuf::int64 value) {
+  
+  performacnce_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.performacnce)
+}
+
+// optional int32 workLoad = 6;
+inline void ProtoMessage_JammerMessage::clear_workload() {
+  workload_ = 0;
+}
+inline ::google::protobuf::int32 ProtoMessage_JammerMessage::workload() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.workLoad)
+  return workload_;
+}
+inline void ProtoMessage_JammerMessage::set_workload(::google::protobuf::int32 value) {
+  
+  workload_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.workLoad)
+}
+
+// optional int32 app = 7;
+inline void ProtoMessage_JammerMessage::clear_app() {
+  app_ = 0;
+}
+inline ::google::protobuf::int32 ProtoMessage_JammerMessage::app() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.app)
+  return app_;
+}
+inline void ProtoMessage_JammerMessage::set_app(::google::protobuf::int32 value) {
+  
+  app_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.app)
+}
+
+// -------------------------------------------------------------------
+
+// ProtoMessage_SensorMessage
+
+// optional int32 workLoad = 1;
+inline void ProtoMessage_SensorMessage::clear_workload() {
+  workload_ = 0;
+}
+inline ::google::protobuf::int32 ProtoMessage_SensorMessage::workload() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.SensorMessage.workLoad)
+  return workload_;
+}
+inline void ProtoMessage_SensorMessage::set_workload(::google::protobuf::int32 value) {
+  
+  workload_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.SensorMessage.workLoad)
+}
+
+// optional int32 flag = 2;
+inline void ProtoMessage_SensorMessage::clear_flag() {
+  flag_ = 0;
+}
+inline ::google::protobuf::int32 ProtoMessage_SensorMessage::flag() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.SensorMessage.flag)
+  return flag_;
+}
+inline void ProtoMessage_SensorMessage::set_flag(::google::protobuf::int32 value) {
+  
+  flag_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.SensorMessage.flag)
+}
+
+// -------------------------------------------------------------------
+
+// ProtoMessage
+
+// optional string dest_device = 1;
+inline void ProtoMessage::clear_dest_device() {
+  dest_device_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ProtoMessage::dest_device() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.dest_device)
+  return dest_device_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ProtoMessage::set_dest_device(const ::std::string& value) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ProtoMessage.dest_device)
+}
+inline void ProtoMessage::set_dest_device(const char* value) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ProtoMessage.dest_device)
+}
+inline void ProtoMessage::set_dest_device(const char* value, size_t size) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ProtoMessage.dest_device)
+}
+inline ::std::string* ProtoMessage::mutable_dest_device() {
+  
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.dest_device)
+  return dest_device_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ProtoMessage::release_dest_device() {
+  
+  return dest_device_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ProtoMessage::set_allocated_dest_device(::std::string* dest_device) {
+  if (dest_device != NULL) {
+    
+  } else {
+    
+  }
+  dest_device_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dest_device);
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.dest_device)
+}
+
+// optional .ProtoMessage.JammerMessage jammer = 2;
+inline bool ProtoMessage::has_jammer() const {
+  return !_is_default_instance_ && jammer_ != NULL;
+}
+inline void ProtoMessage::clear_jammer() {
+  if (GetArenaNoVirtual() == NULL && jammer_ != NULL) delete jammer_;
+  jammer_ = NULL;
+}
+inline const ::ProtoMessage_JammerMessage& ProtoMessage::jammer() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.jammer)
+  return jammer_ != NULL ? *jammer_ : *default_instance_->jammer_;
+}
+inline ::ProtoMessage_JammerMessage* ProtoMessage::mutable_jammer() {
+  
+  if (jammer_ == NULL) {
+    jammer_ = new ::ProtoMessage_JammerMessage;
+  }
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.jammer)
+  return jammer_;
+}
+inline ::ProtoMessage_JammerMessage* ProtoMessage::release_jammer() {
+  
+  ::ProtoMessage_JammerMessage* temp = jammer_;
+  jammer_ = NULL;
+  return temp;
+}
+inline void ProtoMessage::set_allocated_jammer(::ProtoMessage_JammerMessage* jammer) {
+  delete jammer_;
+  jammer_ = jammer;
+  if (jammer) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.jammer)
+}
+
+// optional .ProtoMessage.SensorMessage sensor = 3;
+inline bool ProtoMessage::has_sensor() const {
+  return !_is_default_instance_ && sensor_ != NULL;
+}
+inline void ProtoMessage::clear_sensor() {
+  if (GetArenaNoVirtual() == NULL && sensor_ != NULL) delete sensor_;
+  sensor_ = NULL;
+}
+inline const ::ProtoMessage_SensorMessage& ProtoMessage::sensor() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.sensor)
+  return sensor_ != NULL ? *sensor_ : *default_instance_->sensor_;
+}
+inline ::ProtoMessage_SensorMessage* ProtoMessage::mutable_sensor() {
+  
+  if (sensor_ == NULL) {
+    sensor_ = new ::ProtoMessage_SensorMessage;
+  }
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.sensor)
+  return sensor_;
+}
+inline ::ProtoMessage_SensorMessage* ProtoMessage::release_sensor() {
+  
+  ::ProtoMessage_SensorMessage* temp = sensor_;
+  sensor_ = NULL;
+  return temp;
+}
+inline void ProtoMessage::set_allocated_sensor(::ProtoMessage_SensorMessage* sensor) {
+  delete sensor_;
+  sensor_ = sensor;
+  if (sensor) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.sensor)
+}
+
+// optional int64 time = 4;
+inline void ProtoMessage::clear_time() {
+  time_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ProtoMessage::time() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.time)
+  return time_;
+}
+inline void ProtoMessage::set_time(::google::protobuf::int64 value) {
+  
+  time_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.time)
+}
+
+// optional .ProtoMessage.Signal signal = 5;
+inline void ProtoMessage::clear_signal() {
+  signal_ = 0;
+}
+inline ::ProtoMessage_Signal ProtoMessage::signal() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.signal)
+  return static_cast< ::ProtoMessage_Signal >(signal_);
+}
+inline void ProtoMessage::set_signal(::ProtoMessage_Signal value) {
+  
+  signal_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.signal)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
+
+#ifndef SWIG
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::ProtoMessage_Signal> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ProtoMessage_Signal>() {
+  return ::ProtoMessage_Signal_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
+#endif  // SWIG
 
 // @@protoc_insertion_point(global_scope)
 

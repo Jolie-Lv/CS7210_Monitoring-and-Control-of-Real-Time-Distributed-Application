@@ -1,13 +1,13 @@
 
 #include "global.h"
-class PodController {
-public:
-	bool initialConnection();
-	std::map<string, int> name2acceptor;
-private:
-	std::map<string, int> name2socket;
-	/*
-	* This function should be run before start connection
-	*/
-	bool tcpAcceptorSetup();
-};
+void startAll();
+void terminateAll(int);
+// void startDevice(string device);
+void terminateDevice(string device);
+void resetDevice(string device);
+void checkJammer(ProtoMessage msg);
+int drfmSocket;
+map<string,bool> deviceStatus;
+map<string,ProtoMessage::JammerMessage> jammerStatus;
+map<string,long> deviceResetTimer;
+bool runing;

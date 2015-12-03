@@ -1,7 +1,32 @@
 syntax = "proto3";
-message JammerMessage{
-	double cpuUtil = 1;
-	double gpuUtil = 2;
-	double cpuMemUtil = 3;
-	double gpuMemUtil = 4;
+message ProtoMessage{
+
+	message JammerMessage{
+		double cpuUtil = 1;
+		double gpuUtil = 2;
+		double cpuMemUtil = 3;
+		double gpuMemUtil = 4;
+		int64 performacnce = 5;
+		int32 workLoad = 6;
+		int32 app = 7;
+		
+	}
+	
+	message SensorMessage{
+		int32 workLoad = 1;
+		int32 flag = 2;
+	}
+
+	enum Signal{
+		DEFAULT = 0;
+		TERMINATE = 1;
+		START = 2;
+		RESET = 3;
+	}
+
+	string dest_device = 1;
+	JammerMessage jammer = 2;
+	SensorMessage sensor =3;
+	int64 time = 4;
+	Signal signal = 5;
 }

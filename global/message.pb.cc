@@ -18,9 +18,16 @@
 
 namespace {
 
-const ::google::protobuf::Descriptor* JammerMessage_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* ProtoMessage_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  JammerMessage_reflection_ = NULL;
+  ProtoMessage_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ProtoMessage_JammerMessage_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ProtoMessage_JammerMessage_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ProtoMessage_SensorMessage_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ProtoMessage_SensorMessage_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* ProtoMessage_Signal_descriptor_ = NULL;
 
 }  // namespace
 
@@ -31,24 +38,63 @@ void protobuf_AssignDesc_message_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "message.proto");
   GOOGLE_CHECK(file != NULL);
-  JammerMessage_descriptor_ = file->message_type(0);
-  static const int JammerMessage_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, cpuutil_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, gpuutil_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, cpumemutil_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, gpumemutil_),
+  ProtoMessage_descriptor_ = file->message_type(0);
+  static const int ProtoMessage_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, dest_device_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, jammer_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, sensor_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, signal_),
   };
-  JammerMessage_reflection_ =
+  ProtoMessage_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      JammerMessage_descriptor_,
-      JammerMessage::default_instance_,
-      JammerMessage_offsets_,
+      ProtoMessage_descriptor_,
+      ProtoMessage::default_instance_,
+      ProtoMessage_offsets_,
       -1,
       -1,
       -1,
-      sizeof(JammerMessage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(JammerMessage, _is_default_instance_));
+      sizeof(ProtoMessage),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage, _is_default_instance_));
+  ProtoMessage_JammerMessage_descriptor_ = ProtoMessage_descriptor_->nested_type(0);
+  static const int ProtoMessage_JammerMessage_offsets_[7] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, cpuutil_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, gpuutil_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, cpumemutil_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, gpumemutil_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, performacnce_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, workload_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, app_),
+  };
+  ProtoMessage_JammerMessage_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      ProtoMessage_JammerMessage_descriptor_,
+      ProtoMessage_JammerMessage::default_instance_,
+      ProtoMessage_JammerMessage_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(ProtoMessage_JammerMessage),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_JammerMessage, _is_default_instance_));
+  ProtoMessage_SensorMessage_descriptor_ = ProtoMessage_descriptor_->nested_type(1);
+  static const int ProtoMessage_SensorMessage_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_SensorMessage, workload_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_SensorMessage, flag_),
+  };
+  ProtoMessage_SensorMessage_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      ProtoMessage_SensorMessage_descriptor_,
+      ProtoMessage_SensorMessage::default_instance_,
+      ProtoMessage_SensorMessage_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(ProtoMessage_SensorMessage),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_SensorMessage, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoMessage_SensorMessage, _is_default_instance_));
+  ProtoMessage_Signal_descriptor_ = ProtoMessage_descriptor_->enum_type(0);
 }
 
 namespace {
@@ -62,14 +108,22 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      JammerMessage_descriptor_, &JammerMessage::default_instance());
+      ProtoMessage_descriptor_, &ProtoMessage::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      ProtoMessage_JammerMessage_descriptor_, &ProtoMessage_JammerMessage::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      ProtoMessage_SensorMessage_descriptor_, &ProtoMessage_SensorMessage::default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_message_2eproto() {
-  delete JammerMessage::default_instance_;
-  delete JammerMessage_reflection_;
+  delete ProtoMessage::default_instance_;
+  delete ProtoMessage_reflection_;
+  delete ProtoMessage_JammerMessage::default_instance_;
+  delete ProtoMessage_JammerMessage_reflection_;
+  delete ProtoMessage_SensorMessage::default_instance_;
+  delete ProtoMessage_SensorMessage_reflection_;
 }
 
 void protobuf_AddDesc_message_2eproto() {
@@ -79,13 +133,26 @@ void protobuf_AddDesc_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\"Y\n\rJammerMessage\022\017\n\007cpuU"
-    "til\030\001 \001(\001\022\017\n\007gpuUtil\030\002 \001(\001\022\022\n\ncpuMemUtil"
-    "\030\003 \001(\001\022\022\n\ngpuMemUtil\030\004 \001(\001b\006proto3", 114);
+    "\n\rmessage.proto\"\257\003\n\014ProtoMessage\022\023\n\013dest"
+    "_device\030\001 \001(\t\022+\n\006jammer\030\002 \001(\0132\033.ProtoMes"
+    "sage.JammerMessage\022+\n\006sensor\030\003 \001(\0132\033.Pro"
+    "toMessage.SensorMessage\022\014\n\004time\030\004 \001(\003\022$\n"
+    "\006signal\030\005 \001(\0162\024.ProtoMessage.Signal\032\216\001\n\r"
+    "JammerMessage\022\017\n\007cpuUtil\030\001 \001(\001\022\017\n\007gpuUti"
+    "l\030\002 \001(\001\022\022\n\ncpuMemUtil\030\003 \001(\001\022\022\n\ngpuMemUti"
+    "l\030\004 \001(\001\022\024\n\014performacnce\030\005 \001(\003\022\020\n\010workLoa"
+    "d\030\006 \001(\005\022\013\n\003app\030\007 \001(\005\032/\n\rSensorMessage\022\020\n"
+    "\010workLoad\030\001 \001(\005\022\014\n\004flag\030\002 \001(\005\":\n\006Signal\022"
+    "\013\n\007DEFAULT\020\000\022\r\n\tTERMINATE\020\001\022\t\n\005START\020\002\022\t"
+    "\n\005RESET\020\003b\006proto3", 457);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
-  JammerMessage::default_instance_ = new JammerMessage();
-  JammerMessage::default_instance_->InitAsDefaultInstance();
+  ProtoMessage::default_instance_ = new ProtoMessage();
+  ProtoMessage_JammerMessage::default_instance_ = new ProtoMessage_JammerMessage();
+  ProtoMessage_SensorMessage::default_instance_ = new ProtoMessage_SensorMessage();
+  ProtoMessage::default_instance_->InitAsDefaultInstance();
+  ProtoMessage_JammerMessage::default_instance_->InitAsDefaultInstance();
+  ProtoMessage_SensorMessage::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_message_2eproto);
 }
 
@@ -108,96 +175,127 @@ static void MergeFromFail(int line) {
 
 // ===================================================================
 
-#ifndef _MSC_VER
-const int JammerMessage::kCpuUtilFieldNumber;
-const int JammerMessage::kGpuUtilFieldNumber;
-const int JammerMessage::kCpuMemUtilFieldNumber;
-const int JammerMessage::kGpuMemUtilFieldNumber;
-#endif  // !_MSC_VER
-
-JammerMessage::JammerMessage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:JammerMessage)
+const ::google::protobuf::EnumDescriptor* ProtoMessage_Signal_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ProtoMessage_Signal_descriptor_;
+}
+bool ProtoMessage_Signal_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
 }
 
-void JammerMessage::InitAsDefaultInstance() {
+#ifndef _MSC_VER
+const ProtoMessage_Signal ProtoMessage::DEFAULT;
+const ProtoMessage_Signal ProtoMessage::TERMINATE;
+const ProtoMessage_Signal ProtoMessage::START;
+const ProtoMessage_Signal ProtoMessage::RESET;
+const ProtoMessage_Signal ProtoMessage::Signal_MIN;
+const ProtoMessage_Signal ProtoMessage::Signal_MAX;
+const int ProtoMessage::Signal_ARRAYSIZE;
+#endif  // _MSC_VER
+#ifndef _MSC_VER
+const int ProtoMessage_JammerMessage::kCpuUtilFieldNumber;
+const int ProtoMessage_JammerMessage::kGpuUtilFieldNumber;
+const int ProtoMessage_JammerMessage::kCpuMemUtilFieldNumber;
+const int ProtoMessage_JammerMessage::kGpuMemUtilFieldNumber;
+const int ProtoMessage_JammerMessage::kPerformacnceFieldNumber;
+const int ProtoMessage_JammerMessage::kWorkLoadFieldNumber;
+const int ProtoMessage_JammerMessage::kAppFieldNumber;
+#endif  // !_MSC_VER
+
+ProtoMessage_JammerMessage::ProtoMessage_JammerMessage()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ProtoMessage.JammerMessage)
+}
+
+void ProtoMessage_JammerMessage::InitAsDefaultInstance() {
   _is_default_instance_ = true;
 }
 
-JammerMessage::JammerMessage(const JammerMessage& from)
+ProtoMessage_JammerMessage::ProtoMessage_JammerMessage(const ProtoMessage_JammerMessage& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:JammerMessage)
+  // @@protoc_insertion_point(copy_constructor:ProtoMessage.JammerMessage)
 }
 
-void JammerMessage::SharedCtor() {
+void ProtoMessage_JammerMessage::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
   cpuutil_ = 0;
   gpuutil_ = 0;
   cpumemutil_ = 0;
   gpumemutil_ = 0;
+  performacnce_ = GOOGLE_LONGLONG(0);
+  workload_ = 0;
+  app_ = 0;
 }
 
-JammerMessage::~JammerMessage() {
-  // @@protoc_insertion_point(destructor:JammerMessage)
+ProtoMessage_JammerMessage::~ProtoMessage_JammerMessage() {
+  // @@protoc_insertion_point(destructor:ProtoMessage.JammerMessage)
   SharedDtor();
 }
 
-void JammerMessage::SharedDtor() {
+void ProtoMessage_JammerMessage::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void JammerMessage::SetCachedSize(int size) const {
+void ProtoMessage_JammerMessage::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* JammerMessage::descriptor() {
+const ::google::protobuf::Descriptor* ProtoMessage_JammerMessage::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return JammerMessage_descriptor_;
+  return ProtoMessage_JammerMessage_descriptor_;
 }
 
-const JammerMessage& JammerMessage::default_instance() {
+const ProtoMessage_JammerMessage& ProtoMessage_JammerMessage::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
   return *default_instance_;
 }
 
-JammerMessage* JammerMessage::default_instance_ = NULL;
+ProtoMessage_JammerMessage* ProtoMessage_JammerMessage::default_instance_ = NULL;
 
-JammerMessage* JammerMessage::New(::google::protobuf::Arena* arena) const {
-  JammerMessage* n = new JammerMessage;
+ProtoMessage_JammerMessage* ProtoMessage_JammerMessage::New(::google::protobuf::Arena* arena) const {
+  ProtoMessage_JammerMessage* n = new ProtoMessage_JammerMessage;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void JammerMessage::Clear() {
+void ProtoMessage_JammerMessage::Clear() {
 #define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<JammerMessage*>(16)->f)
+  &reinterpret_cast<ProtoMessage_JammerMessage*>(16)->f)
 
 #define ZR_(first, last) do {\
   ::memset(&first, 0,\
            ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
 } while (0)
 
-  ZR_(cpuutil_, gpumemutil_);
+  ZR_(cpuutil_, app_);
 
 #undef ZR_HELPER_
 #undef ZR_
 
 }
 
-bool JammerMessage::MergePartialFromCodedStream(
+bool ProtoMessage_JammerMessage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:JammerMessage)
+  // @@protoc_insertion_point(parse_start:ProtoMessage.JammerMessage)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -258,6 +356,51 @@ bool JammerMessage::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_performacnce;
+        break;
+      }
+
+      // optional int64 performacnce = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_performacnce:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &performacnce_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_workLoad;
+        break;
+      }
+
+      // optional int32 workLoad = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_workLoad:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &workload_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(56)) goto parse_app;
+        break;
+      }
+
+      // optional int32 app = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_app:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &app_)));
+
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -275,17 +418,17 @@ bool JammerMessage::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:JammerMessage)
+  // @@protoc_insertion_point(parse_success:ProtoMessage.JammerMessage)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:JammerMessage)
+  // @@protoc_insertion_point(parse_failure:ProtoMessage.JammerMessage)
   return false;
 #undef DO_
 }
 
-void JammerMessage::SerializeWithCachedSizes(
+void ProtoMessage_JammerMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:JammerMessage)
+  // @@protoc_insertion_point(serialize_start:ProtoMessage.JammerMessage)
   // optional double cpuUtil = 1;
   if (this->cpuutil() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->cpuutil(), output);
@@ -306,12 +449,27 @@ void JammerMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->gpumemutil(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:JammerMessage)
+  // optional int64 performacnce = 5;
+  if (this->performacnce() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->performacnce(), output);
+  }
+
+  // optional int32 workLoad = 6;
+  if (this->workload() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->workload(), output);
+  }
+
+  // optional int32 app = 7;
+  if (this->app() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->app(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:ProtoMessage.JammerMessage)
 }
 
-::google::protobuf::uint8* JammerMessage::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ProtoMessage_JammerMessage::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:JammerMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:ProtoMessage.JammerMessage)
   // optional double cpuUtil = 1;
   if (this->cpuutil() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->cpuutil(), target);
@@ -332,11 +490,26 @@ void JammerMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->gpumemutil(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:JammerMessage)
+  // optional int64 performacnce = 5;
+  if (this->performacnce() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->performacnce(), target);
+  }
+
+  // optional int32 workLoad = 6;
+  if (this->workload() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->workload(), target);
+  }
+
+  // optional int32 app = 7;
+  if (this->app() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->app(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:ProtoMessage.JammerMessage)
   return target;
 }
 
-int JammerMessage::ByteSize() const {
+int ProtoMessage_JammerMessage::ByteSize() const {
   int total_size = 0;
 
   // optional double cpuUtil = 1;
@@ -359,16 +532,37 @@ int JammerMessage::ByteSize() const {
     total_size += 1 + 8;
   }
 
+  // optional int64 performacnce = 5;
+  if (this->performacnce() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->performacnce());
+  }
+
+  // optional int32 workLoad = 6;
+  if (this->workload() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->workload());
+  }
+
+  // optional int32 app = 7;
+  if (this->app() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->app());
+  }
+
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = total_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
-void JammerMessage::MergeFrom(const ::google::protobuf::Message& from) {
+void ProtoMessage_JammerMessage::MergeFrom(const ::google::protobuf::Message& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const JammerMessage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const JammerMessage>(
+  const ProtoMessage_JammerMessage* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const ProtoMessage_JammerMessage>(
           &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -377,7 +571,7 @@ void JammerMessage::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void JammerMessage::MergeFrom(const JammerMessage& from) {
+void ProtoMessage_JammerMessage::MergeFrom(const ProtoMessage_JammerMessage& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from.cpuutil() != 0) {
     set_cpuutil(from.cpuutil());
@@ -391,103 +585,997 @@ void JammerMessage::MergeFrom(const JammerMessage& from) {
   if (from.gpumemutil() != 0) {
     set_gpumemutil(from.gpumemutil());
   }
+  if (from.performacnce() != 0) {
+    set_performacnce(from.performacnce());
+  }
+  if (from.workload() != 0) {
+    set_workload(from.workload());
+  }
+  if (from.app() != 0) {
+    set_app(from.app());
+  }
 }
 
-void JammerMessage::CopyFrom(const ::google::protobuf::Message& from) {
+void ProtoMessage_JammerMessage::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void JammerMessage::CopyFrom(const JammerMessage& from) {
+void ProtoMessage_JammerMessage::CopyFrom(const ProtoMessage_JammerMessage& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool JammerMessage::IsInitialized() const {
+bool ProtoMessage_JammerMessage::IsInitialized() const {
 
   return true;
 }
 
-void JammerMessage::Swap(JammerMessage* other) {
+void ProtoMessage_JammerMessage::Swap(ProtoMessage_JammerMessage* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void JammerMessage::InternalSwap(JammerMessage* other) {
+void ProtoMessage_JammerMessage::InternalSwap(ProtoMessage_JammerMessage* other) {
   std::swap(cpuutil_, other->cpuutil_);
   std::swap(gpuutil_, other->gpuutil_);
   std::swap(cpumemutil_, other->cpumemutil_);
   std::swap(gpumemutil_, other->gpumemutil_);
+  std::swap(performacnce_, other->performacnce_);
+  std::swap(workload_, other->workload_);
+  std::swap(app_, other->app_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata JammerMessage::GetMetadata() const {
+::google::protobuf::Metadata ProtoMessage_JammerMessage::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = JammerMessage_descriptor_;
-  metadata.reflection = JammerMessage_reflection_;
+  metadata.descriptor = ProtoMessage_JammerMessage_descriptor_;
+  metadata.reflection = ProtoMessage_JammerMessage_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ProtoMessage_SensorMessage::kWorkLoadFieldNumber;
+const int ProtoMessage_SensorMessage::kFlagFieldNumber;
+#endif  // !_MSC_VER
+
+ProtoMessage_SensorMessage::ProtoMessage_SensorMessage()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ProtoMessage.SensorMessage)
+}
+
+void ProtoMessage_SensorMessage::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+ProtoMessage_SensorMessage::ProtoMessage_SensorMessage(const ProtoMessage_SensorMessage& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:ProtoMessage.SensorMessage)
+}
+
+void ProtoMessage_SensorMessage::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  workload_ = 0;
+  flag_ = 0;
+}
+
+ProtoMessage_SensorMessage::~ProtoMessage_SensorMessage() {
+  // @@protoc_insertion_point(destructor:ProtoMessage.SensorMessage)
+  SharedDtor();
+}
+
+void ProtoMessage_SensorMessage::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void ProtoMessage_SensorMessage::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ProtoMessage_SensorMessage::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ProtoMessage_SensorMessage_descriptor_;
+}
+
+const ProtoMessage_SensorMessage& ProtoMessage_SensorMessage::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+ProtoMessage_SensorMessage* ProtoMessage_SensorMessage::default_instance_ = NULL;
+
+ProtoMessage_SensorMessage* ProtoMessage_SensorMessage::New(::google::protobuf::Arena* arena) const {
+  ProtoMessage_SensorMessage* n = new ProtoMessage_SensorMessage;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ProtoMessage_SensorMessage::Clear() {
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<ProtoMessage_SensorMessage*>(16)->f)
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(workload_, flag_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool ProtoMessage_SensorMessage::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ProtoMessage.SensorMessage)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 workLoad = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &workload_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_flag;
+        break;
+      }
+
+      // optional int32 flag = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_flag:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &flag_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ProtoMessage.SensorMessage)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ProtoMessage.SensorMessage)
+  return false;
+#undef DO_
+}
+
+void ProtoMessage_SensorMessage::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ProtoMessage.SensorMessage)
+  // optional int32 workLoad = 1;
+  if (this->workload() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->workload(), output);
+  }
+
+  // optional int32 flag = 2;
+  if (this->flag() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->flag(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:ProtoMessage.SensorMessage)
+}
+
+::google::protobuf::uint8* ProtoMessage_SensorMessage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:ProtoMessage.SensorMessage)
+  // optional int32 workLoad = 1;
+  if (this->workload() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->workload(), target);
+  }
+
+  // optional int32 flag = 2;
+  if (this->flag() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->flag(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:ProtoMessage.SensorMessage)
+  return target;
+}
+
+int ProtoMessage_SensorMessage::ByteSize() const {
+  int total_size = 0;
+
+  // optional int32 workLoad = 1;
+  if (this->workload() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->workload());
+  }
+
+  // optional int32 flag = 2;
+  if (this->flag() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->flag());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ProtoMessage_SensorMessage::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const ProtoMessage_SensorMessage* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const ProtoMessage_SensorMessage>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void ProtoMessage_SensorMessage::MergeFrom(const ProtoMessage_SensorMessage& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from.workload() != 0) {
+    set_workload(from.workload());
+  }
+  if (from.flag() != 0) {
+    set_flag(from.flag());
+  }
+}
+
+void ProtoMessage_SensorMessage::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ProtoMessage_SensorMessage::CopyFrom(const ProtoMessage_SensorMessage& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProtoMessage_SensorMessage::IsInitialized() const {
+
+  return true;
+}
+
+void ProtoMessage_SensorMessage::Swap(ProtoMessage_SensorMessage* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ProtoMessage_SensorMessage::InternalSwap(ProtoMessage_SensorMessage* other) {
+  std::swap(workload_, other->workload_);
+  std::swap(flag_, other->flag_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ProtoMessage_SensorMessage::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ProtoMessage_SensorMessage_descriptor_;
+  metadata.reflection = ProtoMessage_SensorMessage_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int ProtoMessage::kDestDeviceFieldNumber;
+const int ProtoMessage::kJammerFieldNumber;
+const int ProtoMessage::kSensorFieldNumber;
+const int ProtoMessage::kTimeFieldNumber;
+const int ProtoMessage::kSignalFieldNumber;
+#endif  // !_MSC_VER
+
+ProtoMessage::ProtoMessage()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ProtoMessage)
+}
+
+void ProtoMessage::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+  jammer_ = const_cast< ::ProtoMessage_JammerMessage*>(&::ProtoMessage_JammerMessage::default_instance());
+  sensor_ = const_cast< ::ProtoMessage_SensorMessage*>(&::ProtoMessage_SensorMessage::default_instance());
+}
+
+ProtoMessage::ProtoMessage(const ProtoMessage& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:ProtoMessage)
+}
+
+void ProtoMessage::SharedCtor() {
+    _is_default_instance_ = false;
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  dest_device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  jammer_ = NULL;
+  sensor_ = NULL;
+  time_ = GOOGLE_LONGLONG(0);
+  signal_ = 0;
+}
+
+ProtoMessage::~ProtoMessage() {
+  // @@protoc_insertion_point(destructor:ProtoMessage)
+  SharedDtor();
+}
+
+void ProtoMessage::SharedDtor() {
+  dest_device_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != default_instance_) {
+    delete jammer_;
+    delete sensor_;
+  }
+}
+
+void ProtoMessage::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ProtoMessage::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ProtoMessage_descriptor_;
+}
+
+const ProtoMessage& ProtoMessage::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+ProtoMessage* ProtoMessage::default_instance_ = NULL;
+
+ProtoMessage* ProtoMessage::New(::google::protobuf::Arena* arena) const {
+  ProtoMessage* n = new ProtoMessage;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ProtoMessage::Clear() {
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<ProtoMessage*>(16)->f)
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(time_, signal_);
+  dest_device_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && jammer_ != NULL) delete jammer_;
+  jammer_ = NULL;
+  if (GetArenaNoVirtual() == NULL && sensor_ != NULL) delete sensor_;
+  sensor_ = NULL;
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool ProtoMessage::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ProtoMessage)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional string dest_device = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_dest_device()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->dest_device().data(), this->dest_device().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ProtoMessage.dest_device"));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_jammer;
+        break;
+      }
+
+      // optional .ProtoMessage.JammerMessage jammer = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_jammer:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_jammer()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_sensor;
+        break;
+      }
+
+      // optional .ProtoMessage.SensorMessage sensor = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_sensor:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_sensor()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_time;
+        break;
+      }
+
+      // optional int64 time = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &time_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_signal;
+        break;
+      }
+
+      // optional .ProtoMessage.Signal signal = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_signal:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_signal(static_cast< ::ProtoMessage_Signal >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ProtoMessage)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ProtoMessage)
+  return false;
+#undef DO_
+}
+
+void ProtoMessage::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ProtoMessage)
+  // optional string dest_device = 1;
+  if (this->dest_device().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->dest_device().data(), this->dest_device().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ProtoMessage.dest_device");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->dest_device(), output);
+  }
+
+  // optional .ProtoMessage.JammerMessage jammer = 2;
+  if (this->has_jammer()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->jammer_, output);
+  }
+
+  // optional .ProtoMessage.SensorMessage sensor = 3;
+  if (this->has_sensor()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *this->sensor_, output);
+  }
+
+  // optional int64 time = 4;
+  if (this->time() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->time(), output);
+  }
+
+  // optional .ProtoMessage.Signal signal = 5;
+  if (this->signal() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->signal(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:ProtoMessage)
+}
+
+::google::protobuf::uint8* ProtoMessage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:ProtoMessage)
+  // optional string dest_device = 1;
+  if (this->dest_device().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->dest_device().data(), this->dest_device().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ProtoMessage.dest_device");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->dest_device(), target);
+  }
+
+  // optional .ProtoMessage.JammerMessage jammer = 2;
+  if (this->has_jammer()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->jammer_, target);
+  }
+
+  // optional .ProtoMessage.SensorMessage sensor = 3;
+  if (this->has_sensor()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        3, *this->sensor_, target);
+  }
+
+  // optional int64 time = 4;
+  if (this->time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->time(), target);
+  }
+
+  // optional .ProtoMessage.Signal signal = 5;
+  if (this->signal() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->signal(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:ProtoMessage)
+  return target;
+}
+
+int ProtoMessage::ByteSize() const {
+  int total_size = 0;
+
+  // optional string dest_device = 1;
+  if (this->dest_device().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->dest_device());
+  }
+
+  // optional .ProtoMessage.JammerMessage jammer = 2;
+  if (this->has_jammer()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->jammer_);
+  }
+
+  // optional .ProtoMessage.SensorMessage sensor = 3;
+  if (this->has_sensor()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->sensor_);
+  }
+
+  // optional int64 time = 4;
+  if (this->time() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->time());
+  }
+
+  // optional .ProtoMessage.Signal signal = 5;
+  if (this->signal() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->signal());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ProtoMessage::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const ProtoMessage* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const ProtoMessage>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void ProtoMessage::MergeFrom(const ProtoMessage& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from.dest_device().size() > 0) {
+
+    dest_device_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dest_device_);
+  }
+  if (from.has_jammer()) {
+    mutable_jammer()->::ProtoMessage_JammerMessage::MergeFrom(from.jammer());
+  }
+  if (from.has_sensor()) {
+    mutable_sensor()->::ProtoMessage_SensorMessage::MergeFrom(from.sensor());
+  }
+  if (from.time() != 0) {
+    set_time(from.time());
+  }
+  if (from.signal() != 0) {
+    set_signal(from.signal());
+  }
+}
+
+void ProtoMessage::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ProtoMessage::CopyFrom(const ProtoMessage& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProtoMessage::IsInitialized() const {
+
+  return true;
+}
+
+void ProtoMessage::Swap(ProtoMessage* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ProtoMessage::InternalSwap(ProtoMessage* other) {
+  dest_device_.Swap(&other->dest_device_);
+  std::swap(jammer_, other->jammer_);
+  std::swap(sensor_, other->sensor_);
+  std::swap(time_, other->time_);
+  std::swap(signal_, other->signal_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ProtoMessage::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ProtoMessage_descriptor_;
+  metadata.reflection = ProtoMessage_reflection_;
   return metadata;
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// JammerMessage
+// ProtoMessage_JammerMessage
 
 // optional double cpuUtil = 1;
-void JammerMessage::clear_cpuutil() {
+void ProtoMessage_JammerMessage::clear_cpuutil() {
   cpuutil_ = 0;
 }
- double JammerMessage::cpuutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.cpuUtil)
+ double ProtoMessage_JammerMessage::cpuutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.cpuUtil)
   return cpuutil_;
 }
- void JammerMessage::set_cpuutil(double value) {
+ void ProtoMessage_JammerMessage::set_cpuutil(double value) {
   
   cpuutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.cpuUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.cpuUtil)
 }
 
 // optional double gpuUtil = 2;
-void JammerMessage::clear_gpuutil() {
+void ProtoMessage_JammerMessage::clear_gpuutil() {
   gpuutil_ = 0;
 }
- double JammerMessage::gpuutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.gpuUtil)
+ double ProtoMessage_JammerMessage::gpuutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.gpuUtil)
   return gpuutil_;
 }
- void JammerMessage::set_gpuutil(double value) {
+ void ProtoMessage_JammerMessage::set_gpuutil(double value) {
   
   gpuutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.gpuUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.gpuUtil)
 }
 
 // optional double cpuMemUtil = 3;
-void JammerMessage::clear_cpumemutil() {
+void ProtoMessage_JammerMessage::clear_cpumemutil() {
   cpumemutil_ = 0;
 }
- double JammerMessage::cpumemutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.cpuMemUtil)
+ double ProtoMessage_JammerMessage::cpumemutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.cpuMemUtil)
   return cpumemutil_;
 }
- void JammerMessage::set_cpumemutil(double value) {
+ void ProtoMessage_JammerMessage::set_cpumemutil(double value) {
   
   cpumemutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.cpuMemUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.cpuMemUtil)
 }
 
 // optional double gpuMemUtil = 4;
-void JammerMessage::clear_gpumemutil() {
+void ProtoMessage_JammerMessage::clear_gpumemutil() {
   gpumemutil_ = 0;
 }
- double JammerMessage::gpumemutil() const {
-  // @@protoc_insertion_point(field_get:JammerMessage.gpuMemUtil)
+ double ProtoMessage_JammerMessage::gpumemutil() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.gpuMemUtil)
   return gpumemutil_;
 }
- void JammerMessage::set_gpumemutil(double value) {
+ void ProtoMessage_JammerMessage::set_gpumemutil(double value) {
   
   gpumemutil_ = value;
-  // @@protoc_insertion_point(field_set:JammerMessage.gpuMemUtil)
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.gpuMemUtil)
+}
+
+// optional int64 performacnce = 5;
+void ProtoMessage_JammerMessage::clear_performacnce() {
+  performacnce_ = GOOGLE_LONGLONG(0);
+}
+ ::google::protobuf::int64 ProtoMessage_JammerMessage::performacnce() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.performacnce)
+  return performacnce_;
+}
+ void ProtoMessage_JammerMessage::set_performacnce(::google::protobuf::int64 value) {
+  
+  performacnce_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.performacnce)
+}
+
+// optional int32 workLoad = 6;
+void ProtoMessage_JammerMessage::clear_workload() {
+  workload_ = 0;
+}
+ ::google::protobuf::int32 ProtoMessage_JammerMessage::workload() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.workLoad)
+  return workload_;
+}
+ void ProtoMessage_JammerMessage::set_workload(::google::protobuf::int32 value) {
+  
+  workload_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.workLoad)
+}
+
+// optional int32 app = 7;
+void ProtoMessage_JammerMessage::clear_app() {
+  app_ = 0;
+}
+ ::google::protobuf::int32 ProtoMessage_JammerMessage::app() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.JammerMessage.app)
+  return app_;
+}
+ void ProtoMessage_JammerMessage::set_app(::google::protobuf::int32 value) {
+  
+  app_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.JammerMessage.app)
+}
+
+// -------------------------------------------------------------------
+
+// ProtoMessage_SensorMessage
+
+// optional int32 workLoad = 1;
+void ProtoMessage_SensorMessage::clear_workload() {
+  workload_ = 0;
+}
+ ::google::protobuf::int32 ProtoMessage_SensorMessage::workload() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.SensorMessage.workLoad)
+  return workload_;
+}
+ void ProtoMessage_SensorMessage::set_workload(::google::protobuf::int32 value) {
+  
+  workload_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.SensorMessage.workLoad)
+}
+
+// optional int32 flag = 2;
+void ProtoMessage_SensorMessage::clear_flag() {
+  flag_ = 0;
+}
+ ::google::protobuf::int32 ProtoMessage_SensorMessage::flag() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.SensorMessage.flag)
+  return flag_;
+}
+ void ProtoMessage_SensorMessage::set_flag(::google::protobuf::int32 value) {
+  
+  flag_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.SensorMessage.flag)
+}
+
+// -------------------------------------------------------------------
+
+// ProtoMessage
+
+// optional string dest_device = 1;
+void ProtoMessage::clear_dest_device() {
+  dest_device_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ const ::std::string& ProtoMessage::dest_device() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.dest_device)
+  return dest_device_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void ProtoMessage::set_dest_device(const ::std::string& value) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ProtoMessage.dest_device)
+}
+ void ProtoMessage::set_dest_device(const char* value) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ProtoMessage.dest_device)
+}
+ void ProtoMessage::set_dest_device(const char* value, size_t size) {
+  
+  dest_device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ProtoMessage.dest_device)
+}
+ ::std::string* ProtoMessage::mutable_dest_device() {
+  
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.dest_device)
+  return dest_device_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* ProtoMessage::release_dest_device() {
+  
+  return dest_device_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void ProtoMessage::set_allocated_dest_device(::std::string* dest_device) {
+  if (dest_device != NULL) {
+    
+  } else {
+    
+  }
+  dest_device_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dest_device);
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.dest_device)
+}
+
+// optional .ProtoMessage.JammerMessage jammer = 2;
+bool ProtoMessage::has_jammer() const {
+  return !_is_default_instance_ && jammer_ != NULL;
+}
+void ProtoMessage::clear_jammer() {
+  if (GetArenaNoVirtual() == NULL && jammer_ != NULL) delete jammer_;
+  jammer_ = NULL;
+}
+const ::ProtoMessage_JammerMessage& ProtoMessage::jammer() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.jammer)
+  return jammer_ != NULL ? *jammer_ : *default_instance_->jammer_;
+}
+::ProtoMessage_JammerMessage* ProtoMessage::mutable_jammer() {
+  
+  if (jammer_ == NULL) {
+    jammer_ = new ::ProtoMessage_JammerMessage;
+  }
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.jammer)
+  return jammer_;
+}
+::ProtoMessage_JammerMessage* ProtoMessage::release_jammer() {
+  
+  ::ProtoMessage_JammerMessage* temp = jammer_;
+  jammer_ = NULL;
+  return temp;
+}
+void ProtoMessage::set_allocated_jammer(::ProtoMessage_JammerMessage* jammer) {
+  delete jammer_;
+  jammer_ = jammer;
+  if (jammer) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.jammer)
+}
+
+// optional .ProtoMessage.SensorMessage sensor = 3;
+bool ProtoMessage::has_sensor() const {
+  return !_is_default_instance_ && sensor_ != NULL;
+}
+void ProtoMessage::clear_sensor() {
+  if (GetArenaNoVirtual() == NULL && sensor_ != NULL) delete sensor_;
+  sensor_ = NULL;
+}
+const ::ProtoMessage_SensorMessage& ProtoMessage::sensor() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.sensor)
+  return sensor_ != NULL ? *sensor_ : *default_instance_->sensor_;
+}
+::ProtoMessage_SensorMessage* ProtoMessage::mutable_sensor() {
+  
+  if (sensor_ == NULL) {
+    sensor_ = new ::ProtoMessage_SensorMessage;
+  }
+  // @@protoc_insertion_point(field_mutable:ProtoMessage.sensor)
+  return sensor_;
+}
+::ProtoMessage_SensorMessage* ProtoMessage::release_sensor() {
+  
+  ::ProtoMessage_SensorMessage* temp = sensor_;
+  sensor_ = NULL;
+  return temp;
+}
+void ProtoMessage::set_allocated_sensor(::ProtoMessage_SensorMessage* sensor) {
+  delete sensor_;
+  sensor_ = sensor;
+  if (sensor) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:ProtoMessage.sensor)
+}
+
+// optional int64 time = 4;
+void ProtoMessage::clear_time() {
+  time_ = GOOGLE_LONGLONG(0);
+}
+ ::google::protobuf::int64 ProtoMessage::time() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.time)
+  return time_;
+}
+ void ProtoMessage::set_time(::google::protobuf::int64 value) {
+  
+  time_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.time)
+}
+
+// optional .ProtoMessage.Signal signal = 5;
+void ProtoMessage::clear_signal() {
+  signal_ = 0;
+}
+ ::ProtoMessage_Signal ProtoMessage::signal() const {
+  // @@protoc_insertion_point(field_get:ProtoMessage.signal)
+  return static_cast< ::ProtoMessage_Signal >(signal_);
+}
+ void ProtoMessage::set_signal(::ProtoMessage_Signal value) {
+  
+  signal_ = value;
+  // @@protoc_insertion_point(field_set:ProtoMessage.signal)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
