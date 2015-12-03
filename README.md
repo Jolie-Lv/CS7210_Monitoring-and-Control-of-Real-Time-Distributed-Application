@@ -1,5 +1,5 @@
 # CS7210_Final_Project
-Before building this project please make sure that the root folder name for this project is /CS7210/
+Before building this project, please make sure that the root folder name for this project is /CS7210/
 
 1. Steps to build :
   	$ ssh to node1
