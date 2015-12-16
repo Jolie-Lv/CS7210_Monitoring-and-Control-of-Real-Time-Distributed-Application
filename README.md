@@ -1,4 +1,6 @@
 # CS7210_Final_Project
+Alan Nussbuam
+Jian Chen
 ==============Introduction===============
 This project created a distributed Cyber Electronic Warfare (EW) application that requires coordination and consistency across all the distributed functions that are executing in various nodes.This project is the distributed architecture that we created to support the Cyber EW mission.
 All software was written in C++ and CUDA for there are 5 software components of our distributed system:
